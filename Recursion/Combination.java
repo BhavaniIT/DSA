@@ -18,5 +18,4 @@ public class Combination {
         int r = 3;
         System.out.println(combi(5,3));
     }
-    
 }
