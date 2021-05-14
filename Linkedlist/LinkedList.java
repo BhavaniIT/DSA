@@ -78,6 +78,27 @@ public class LinkedList {
         prev.next = temp.next;
     }
 
+    //delete entire linked list
+
+    public void deleteEntireList()
+    {
+        head = null;
+        return;
+    }
+
+    //getNode count
+    public int getNodeCount(Node node)
+    {
+        if(node == null)
+            return 0;
+        return 1+getNodeCount(node.next);
+    }
+
+    public int getCount()
+    {
+        return getNodeCount(head);
+    }
+
     public void printlist()
     {
         Node temp = head;
@@ -97,6 +118,7 @@ public class LinkedList {
         llist.push(50);
         llist.append(5);
         llist.printlist();
+        System.out.println(llist.getCount());
     }
     
 }
