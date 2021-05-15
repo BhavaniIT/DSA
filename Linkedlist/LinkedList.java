@@ -109,6 +109,37 @@ public class LinkedList {
         }
     }
 
+    public Node reverseLinked(Node node)
+    {
+        //step 1:
+        Node curr = node;
+        Node prev = null;
+        Node next = null;
+        int count = 0;
+        while(curr != null)
+        {
+            //step 2:
+            next = curr.next;
+            curr.next = prev;
+
+            //step 3:
+            prev = curr;
+            curr = next;
+
+            System.out.println("reverse:"+count);
+            count++;
+        }
+
+        head = prev;
+        return node;
+    }
+
+    public void reverse()
+    {
+        reverseLinked(head);
+    }
+
+   
     public static void main(String[] args)
     {
         LinkedList llist = new LinkedList();
@@ -118,7 +149,10 @@ public class LinkedList {
         llist.push(50);
         llist.append(5);
         llist.printlist();
-        System.out.println(llist.getCount());
+        llist.reverse();
+        llist.printlist();
+       // System.out.println(llist.getCount());
+        
     }
     
 }
