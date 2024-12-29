@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class Fibonacci{
     private int fibonacci(int n, int[] dp){
-        if(n <= 1) return 1;
+        if(n <= 1) return n;
         if(dp[n] != -1) return dp[n];
         return dp[n] = fibonacci(n-1, dp)+fibonacci(n-2,dp);
     }
